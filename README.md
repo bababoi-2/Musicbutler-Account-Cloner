@@ -1,5 +1,5 @@
 # Musicbutler-Account-Cloner
-Userscript for copying the data of the logged in account to a new account. Can be used to renew your premium trial.
+Tampermonkey userscript for copying the data of the logged in account to a new account. Can be used to renew your premium trial.
 
 ## Features
 - Allows you to copy data from the account you are logged into to a new account (using username and password)
