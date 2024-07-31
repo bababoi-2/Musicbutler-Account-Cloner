@@ -5,7 +5,7 @@
 // @description  Copies the data of the logged in account to a new account. Can be used to renew your premium trial.
 // @author       Bababoiiiii
 // @match        https://www.musicbutler.io/
-// @match        https://www.musicbutler.io/accounts/register?check
+// @match        https://www.musicbutler.io/accounts/register?create
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=musicbutler.io
 // @grant        none
 // ==/UserScript==
@@ -321,13 +321,13 @@ function decode(s) {
         ).replace(/(.)./g, (a, _) => String.fromCharCode(a.charCodeAt() - offset))
     );
 }
-
+//{"o_s":"4mVWtHX6zraiOtYsTrE6gro3AjI6COaCbjLZnjIbQaSyXdHstij2umX1lnqqkS2s6fXyhuXp+p9GNyKKqioOoW32SntWkOGQzl7qicIpAoIuAsHeLfrGgr5d2d2t9fmqpmCd8Pn6bZXSOu4e6qzqdLpeGZpugeKmEjk5msqxzoBJ9Gp6GpEZkUJc9ok+KTaA3gBd3n34YnnuWsWaXZamrx5Vxi5ysl5y9mFR7LqAOqnmWM512fbJqb5gOfNJ+smW7jpWHiqtjnWGWL3t/oHJmpI5jh5t9gWqMmGN8WH4kZWiOmocsq5SdKJdloRaKj6iqlRSMlZsWnYqDRKJzhjCti5gri8qJfKd5fbOhV20VZE6VYXs9iietjn2RnlOkUWSWl6aizoppoIuae4e+qzedm46ZoReKe5wUmGl8HoporVGOk4ybgXOdxIOBolCGzq0umA+Lgomup1x9x6FdrJ6kh5d5Z9OGq6C+lqmhlqCBqcSOwGUPbUGn0pVji1hpEKbQl3WtF30lajCZbK3OfhBkTJU9ixmGr5zRlip6JG0UpK2WsaIYgolkmo43izt6x59+jLJmeW2qoc2MTmfKoH5kaZbKjFeKs64flbGLUoFenXSDDqGWjj2cNZaRfGyCIqCRgDN3f34VabuYWHpdbbqkPpZpopSCEGRRjhiLenqJn9WMhmYObRGhfYxvZrt6mqg+ja2MXqSdqoyWL51Rfc5qRY6RodV6bqetlxhmgokepyZ9qaFRhlqgE46ojFikVaC7l5GgOG1FpFSWkKKzgmhkRo53i6l6kJ+DjMJmeW1WoZeMEGZHerarKpdJe1WsRaCllq2MloosrhqVk4shgWOdZYM7oTCOVJzLliB8kII5oD2AzneJfm+dQ41Mi6Zpf5/HjTxm03pFqJKXXHqZbYykVpeUZ8eGvKB4jaOL04ZjmhqWRGbCjqCalJexZxN2zqohmMx7JKAQoa2ZV4cOfR9qq46VoZl6MKeHl0RmSopPbciAuHfEfkacuZZLi8l6W2o9ljhmmmknmi6XpWd3hhyqyZeuoTCKFJqDlsd7Fm16ni+Nv4wmhqWkZ5auZsZodZ0eg4idSn6UeTuGSIdafaSnUn21oTaKI2ivl2J7S6w8pKeNxmY0oH5kpIx5ZjNtd63AjJdmfIKcp7iOdYtBemWpP32vnkqjWZ2ZhruKg5ybhQ6IyXk+oDV4D4eoiiSFWZ1ZgHF3bX6ZoHSWIIs3epOkE5aNekBtQauEl7Wh1YqZobKOu4wlfk6gMpbJoZmCFaAklxStGn3LaqiZTK1yfsGogZinjImCP6SzjSplpm1En8SXVKGZbZertpd5rWZ9MmozmFd8VX7KZVCORodQq0ydW5cyfHd+J6pKjkN8xIq/ns6YTXqvbZRlMZctexaG0JxKmKt7f4q2rih9fp58pNVke5eXoiWKcaBwmlGHN6tPncmVQot5aYlkYI7Pi0iYG61ljQ+MD4ZOpNKWTmZUaZ+ukn17ng+kLGsofVKhUG0fqz6ON4ttaXOaypcOZ3p2nqo5mL57faBwoVKZPYqqbX2ktJaSoIxtw5x4lyt8F3UrnSWDe6Ifhm+tGpgvi8KKXW14gCl3cn6lnz2NOYzMhmegEozTZnGOeqqDl2ShaWUfnBqYlXeufalqb30yn0iKe4p2fVSiRGSYcV0=","o_a":",g3+lGXUdXdF6sKY7bb2lyHs1cBltcF04ebZw1X2FlTJ4cG+odSthDnnClneXwV9AeYqAcoUcYJt5i6aOhYyVunhjbxh1zaTIeSOmW4+tYKZ6n6ZUl2WkJHp0cBCBZ16GdbCVWqO5lX95VIAUeRtdQ3ucgCZ1LKM7eqemQ4GtXxZ5FKWmdbefS3VilnRxn6NGeitwf33NXRB5E3B0ecpcNXtegItxmJVyeJRvynWEpCZ5gJa2daejInmEgC+FiV4ketGWfpNPppt1WZVao1eVtXmRgDJ1tmCWejqAQHW8pK55L5a1kxqkWXk0b3J1P59vdXiWvHFFpGd6TKY9j1Rfm3o2cERxcmCCeqmWwYUtlTx4PW9xdZOkI3oigK1xaV2QeReWVnnDpL95i3ApfWNczXWglUujYpU8eRyAc4GnX9V7YXCXdWNhkHrNls5xi6NXecSltHV/n851YpbScblda3nRpql5u1weenOmg4WaYGF6zqY9hc2VvHiTb211NqSxeqSWIW0RXqh7JXB1dV1gSHtvcKeBTqWadayVGaMRlbB5WoBDhTRcLno/cFiFy2CHel6Wa49UXSV7MW+BdVmfeXWwlk1xcFwlepumvYWZXWl7KnA9fZujI3qicBlxEpVUeLRvR3XNpCx6ooArcbKjWnkSptKFMaZYey+AR4GtpdR1bpUSo46VPnkrgIqFT1x/eX2AhYWeplZ6RpZhbbdfG3lgpYF1058ydUeWXnFxXsV5kHCEjxRgXntlgE9x0F2CeXWmYY+VlXV4X2+idaqkunoslkuPlVwbeUCmMYF0YVB5r3CLfZlfnHWylYujTZWieYiASoGZYIh7EnCjfTakkHrKphqXlqYReXmVcHWxn851GpaQcRpetnomln55Rl2ieQ6Aq4WxpGV5y6ZYhUKVi3i/b9R1o6SqehymQm0qXG96Haa7l4xdknp6cEZxemBidc6VjKOjlTF5YoDAhRFfjXlvgL51dFyPeixwSoFeYKh5XG9MdZufIXVBlidxpl4eeommvW1MpTV5GXBfk6WklXqccLFtQpV7eLRvOHV1pId6a6atcZRcw3rLcMtxglzUejWATHnOpW11zJg2XJRpMQ==","c":{"u":"\u0017eW1JhXFQhBJ4FG5/ZTGHK3B1bpCPlIRVe8xvpGlNjbZ8elgwVDhUvQ==","e":")i11bq4NjlhGKuoDAdyWZi4KcgKmhjJbCjTSBoHsmn2aOhm6raz+Xk4smgD5vIpk9i6tsYF6xk3OLhFuKWYFmSg==","p":"4hxR8Y4mhZbx+NnwOl0+ckIJ4eVaszqgWiIaiwqO+oL2Vtp2LeXihToYpq8xxNXEf"}}
 (function() {
     'use strict';
 
     if (location.href === "https://www.musicbutler.io/") {
         main_page();
-    } else if (location.href.startsWith("https://www.musicbutler.io/accounts/register")) {
+    } else if (location.href === "https://www.musicbutler.io/accounts/register?create") {
         register_page();
     }
 
